@@ -50,6 +50,7 @@ static void my_box_switch_irq(void)
 
 static void my_box_main(const void *)
 {
+    int *num = (int *)malloc(7);
     /* Allocate a box-specific LED. */
     if (!(uvisor_ctx->led = new DigitalOut(SECURE_LED))) {
         printf("ERROR: failed to allocate memories for LED\r\n");
